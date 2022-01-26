@@ -1,0 +1,37 @@
+<h1>{{ appName }}</h1>
+<h2>{{ header1 }}</h2>
+
+<!--Numeric binding-->
+<p>Given the numbers 70 and 30, compute for the following:</p>
+<p>The sum of {{n1}} and {{n2}} is {{n1 + n2}}</p>
+<p>The difference of {{n1}} and {{n2}} is {{n1 - n2}}</p>
+<p>The product of {{n1}} and {{n2}} is {{n1 * n2}}</p>
+<p>The quotient of {{n1}} and {{n2}} is {{n1 / n2}}</p>
+
+<!--Property binding -->
+<input type = 'text' [value] = "clientName">
+<p [style.color] = "myColor"> Text color is style using style binding.</p>
+
+<!--style binding-->
+<p [class]= "appliedCSSClass">This line applied the style binding</p>
+<p [class.blue] = 'notapplieCSSClass'>While this line does not</p>
+
+
+
+<!-- two-way binding -->
+<h3>Two-way data binding</h3>
+
+<button (click)= "showData($event)">Click Me</button>
+<button on-click = "showData($event)">Click Me Too</button>
+
+<p>Using keyup, keydown, blur, mouse actions</p>
+
+<!--key actions-->
+<input type="text" #keyupbox placeholder= "keyup box" (keyup)= getData(keyupbox.value)/>
+<input type="text" #keydownbox placeholder= "keydown box" (keydown)= getData(keydownbox.value)/>
+<input type="text" #keyblurbox placeholder= "blur box" (blur)= getData(keyblurbox.value)/>
+<input type="text" #keyinputbox placeholder= "input box" (input)= getData(keyinputbox.value)/>
+
+<!--mouse actions-->
+<h2 (mouseover)="getData('mouse over')">Hover your mouse on this text! </h2>
+<h2 (mouseleave)="getData('mouse left')">Hover your mouse on this text and leave it! </h2>
